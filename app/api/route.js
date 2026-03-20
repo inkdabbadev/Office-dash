@@ -5,7 +5,7 @@ export async function GET() {
     const {data , error} = await supabase
         .from("instagram_stats")
         .select("*")
-        .order("id" , { ascending: true });
+        .order("followers" , { ascending: false });
 
     if(error) {
         return NextResponse.json({error : error.message},{status: 500});

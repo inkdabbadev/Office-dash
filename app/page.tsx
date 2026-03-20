@@ -16,13 +16,20 @@ export default function Home() {
   const [rows, setRows] = useState<Row[]>([]);
 
   useEffect(() => {
+    let interval: NodeJS.Timeout;
     async function fetchRows() {
       const res = await fetch("/api");
       const json = await res.json();
       setRows(json.data || []);
     }
     fetchRows();
-  }, []);
+    interval = setInterval(() => {
+      fetchRows();
+    }, 5000);
+
+    return() => clearInterval(interval)
+
+  },[]);
 
   const topTwo = rows.slice(0, 2);
   const rest = rows.slice(2);

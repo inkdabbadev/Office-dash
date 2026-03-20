@@ -325,6 +325,49 @@ html, body {
   white-space: nowrap;
 }
 
+/* ── Sort Controls ── */
+.sort-controls {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(0,212,255,0.05);
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 6px;
+  color: rgba(0,212,255,0.45);
+  font-family: inherit;
+  font-size: clamp(0.4rem, 0.55vw, 0.52rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.sort-btn:hover {
+  background: rgba(0,212,255,0.1);
+  border-color: rgba(0,212,255,0.35);
+  color: rgba(0,212,255,0.8);
+}
+
+.sort-btn--active {
+  background: rgba(0,212,255,0.12);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 10px rgba(0,212,255,0.15);
+}
+
+.sort-icon {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
 /* ── Grid Section — 2 rows of landscape cards ── */
 .grid-section {
   position: relative;
